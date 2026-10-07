@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>สอบเสร็จแล้วนะคุณ 🧸🤎</title>
+
+
+<style>
+
+/* =========================================
+   พื้นฐาน
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    font-family:
+        "Tahoma",
+        "Leelawadee UI",
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            #fff9e8 0%,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 25%,
+            #e8f0df 0%,
+            transparent 28%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f8f1df,
+            #e7eee0
+        );
+}
+
+
+/* =========================================
+   การ์ด
+========================================= */
+
+.card {
+
+    width: 920px;
+
+    height: 720px;
+
+    max-width: 94vw;
+
+    max-height: 94vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    border:
+        3px solid
+        rgba(255,255,255,0.9);
+
+    border-radius: 42px;
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(94,75,45,0.18),
+
+        inset 0 0 35px
+        rgba(255,255,255,0.8);
+}
+
+
+/* =========================================
+   ตกแต่งพื้นหลัง
+========================================= */
+
+.circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    opacity: .55;
+}
+
+.circle.one {
+
+    width: 180px;
+    height: 180px;
+
+    background: #e9d7b7;
+
+    left: -70px;
+    top: 120px;
+}
+
+.circle.two {
+
+    width: 150px;
+    height: 150px;
+
+    background: #d8e5cb;
+
+    right: -50px;
+    top: 80px;
+}
+
+.circle.three {
+
+    width: 110px;
+    height: 110px;
+
+    background: #f1dfaa;
+
+    right: 70px;
+    bottom: 80px;
+}
+
+
+/* =========================================
+   หัวข้อ
+========================================= */
+
+.title {
+
+    position: absolute;
+
+    top: 27px;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #765438;
+
+    font-size: 29px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    z-index: 50;
+}
+
+
+/* =========================================
+   พื้นที่หมี
+========================================= */
+
+.bear-area {
+
+    position: absolute;
+
+    top: 70px;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 410px;
+
+    display: flex;
+
+    justify-content: center;
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   หมี
+========================================= */
+
+.bear {
+
+    position: relative;
+
+    width: 370px;
+
+    height: 400px;
+
+    animation:
+        bearFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================
+   หู
+========================================= */
+
+.ear {
+
+    position: absolute;
+
+    width: 105px;
+
+    height: 105px;
+
+    background: #8b5e3c;
+
+    border-radius: 50%;
+
+    top: 28px;
+
+    border:
+        5px solid
+        #70482e;
+
+    z-index: 1;
+}
+
+
+.ear::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 58px;
+
+    height: 58px;
+
+    background: #d69b72;
+
+    border-radius: 50%;
+
+    left: 18px;
+
+    top: 18px;
+}
+
+
+.ear.left {
+    left: 48px;
+}
+
+
+.ear.right {
+    right: 48px;
+}
+
+
+/* =========================================
+   ตัวหมี
+========================================= */
+
+.body {
+
+    position: absolute;
+
+    width: 230px;
+
+    height: 190px;
+
+    background: #8b5e3c;
+
+    border-radius:
+        48%
+        48%
+        45%
+        45%;
+
+    left: 70px;
+
+    top: 255px;
+
+    border:
+        5px solid
+        #70482e;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   พุง
+========================================= */
+
+.belly {
+
+    position: absolute;
+
+    width: 145px;
+
+    height: 125px;
+
+    background: #dca77d;
+
+    border-radius: 50%;
+
+    left: 43px;
+
+    top: 42px;
+}
+
+
+/* =========================================
+   หัวหมี
+========================================= */
+
+.head {
+
+    position: absolute;
+
+    width: 285px;
+
+    height: 260px;
+
+    background: #9a6844;
+
+    border-radius: 50%;
+
+    left: 42px;
+
+    top: 80px;
+
+    border:
+        5px solid
+        #70482e;
+
+    z-index: 4;
+}
+
+
+/* =========================================
+   ปากกระบอก
+========================================= */
+
+.muzzle {
+
+    position: absolute;
+
+    width: 125px;
+
+    height: 90px;
+
+    background: #e0b38c;
+
+    border-radius: 50%;
+
+    left: 75px;
+
+    top: 130px;
+}
+
+
+/* =========================================
+   ตา
+========================================= */
+
+.eye {
+
+    position: absolute;
+
+    width: 25px;
+
+    height: 30px;
+
+    background: #33251d;
+
+    border-radius: 50%;
+
+    top: 90px;
+
+    z-index: 5;
+}
+
+
+.eye::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    left: 5px;
+
+    top: 5px;
+}
+
+
+.eye.left {
+    left: 70px;
+}
+
+
+.eye.right {
+    right: 70px;
+}
+
+
+/* =========================================
+   แก้ม
+========================================= */
+
+.cheek {
+
+    position: absolute;
+
+    width: 42px;
+
+    height: 24px;
+
+    background: #e9a48d;
+
+    border-radius: 50%;
+
+    top: 135px;
+
+    opacity: .75;
+
+    z-index: 6;
+}
+
+
+.cheek.left {
+    left: 22px;
+}
+
+
+.cheek.right {
+    right: 22px;
+}
+
+
+/* =========================================
+   จมูก
+========================================= */
+
+.nose {
+
+    position: absolute;
+
+    width: 32px;
+
+    height: 24px;
+
+    background: #513328;
+
+    border-radius:
+        50%
+        50%
+        60%
+        60%;
+
+    left: 46px;
+
+    top: 25px;
+}
+
+
+/* =========================================
+   ปาก
+========================================= */
+
+.mouth {
+
+    position: absolute;
+
+    width: 35px;
+
+    height: 22px;
+
+    left: 45px;
+
+    top: 47px;
+
+    border-bottom:
+        4px solid
+        #513328;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   แขน
+========================================= */
+
+.arm {
+
+    position: absolute;
+
+    width: 115px;
+
+    height: 55px;
+
+    background: #8b5e3c;
+
+    border:
+        5px solid
+        #70482e;
+
+    border-radius: 60px;
+
+    top: 280px;
+
+    z-index: 8;
+}
+
+
+.arm.left {
+
+    left: 35px;
+
+    transform:
+        rotate(25deg);
+}
+
+
+.arm.right {
+
+    right: 35px;
+
+    transform:
+        rotate(-25deg);
+}
+
+
+/* =========================================
+   หัวใจที่หมีถือ
+   ใช้ clip-path เพื่อให้เป็นหัวใจเต็มดวง
+========================================= */
+
+.big-heart {
+
+    position: absolute;
+
+    width: 110px;
+
+    height: 100px;
+
+    left: 130px;
+
+    top: 270px;
+
+    z-index: 15;
+
+    background: #e87983;
+
+    clip-path: polygon(
+        50% 95%,
+        5% 45%,
+        5% 25%,
+        10% 12%,
+        22% 5%,
+        35% 8%,
+        50% 23%,
+        65% 8%,
+        78% 5%,
+        90% 12%,
+        95% 25%,
+        95% 45%
+    );
+
+    filter:
+        drop-shadow(
+            0 5px 5px
+            rgba(100,50,40,0.15)
+        );
+
+    animation:
+        heartBeat
+        1.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================
+   ข้อความบนหัวใจ
+========================================= */
+
+.heart-text {
+
+    position: absolute;
+
+    left: 145px;
+
+    top: 300px;
+
+    width: 80px;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    font-weight: bold;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   กล่องข้อความ
+========================================= */
+
+.message-box {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    bottom: 25px;
+
+    width: 800px;
+
+    max-width: 90%;
+
+    padding:
+        18px
+        25px
+        20px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.94);
+
+    border:
+        2px solid
+        #d7c4a8;
+
+    border-radius: 28px;
+
+    box-shadow:
+
+        0 12px 35px
+        rgba(100,80,50,0.12);
+
+    z-index: 50;
+}
+
+
+.message-box h1 {
+
+    margin:
+        0
+        0
+        7px;
+
+    color: #765438;
+
+    font-size: 31px;
+}
+
+
+.message-box p {
+
+    margin: 0;
+
+    color: #6e665d;
+
+    font-size: 18px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   ตกแต่งดอกไม้
+========================================= */
+
+.flower {
+
+    position: absolute;
+
+    width: 22px;
+
+    height: 22px;
+
+    background: #e8a7a0;
+
+    border-radius: 50%;
+
+    z-index: 20;
+}
+
+
+.flower::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 9px;
+
+    background: #f3cf72;
+
+    border-radius: 50%;
+
+    left: 6px;
+
+    top: 6px;
+}
+
+
+.flower.one {
+
+    left: 90px;
+
+    top: 160px;
+
+    box-shadow:
+        0 -10px 0 #e8a7a0,
+        0 10px 0 #e8a7a0,
+        10px 0 0 #e8a7a0,
+        -10px 0 0 #e8a7a0;
+}
+
+
+.flower.two {
+
+    right: 90px;
+
+    top: 210px;
+
+    transform: scale(.8);
+
+    box-shadow:
+        0 -10px 0 #d5a4d8,
+        0 10px 0 #d5a4d8,
+        10px 0 0 #d5a4d8,
+        -10px 0 0 #d5a4d8;
+}
+
+
+/* =========================================
+   ดาว
+========================================= */
+
+.star {
+
+    position: absolute;
+
+    color: #d1aa5c;
+
+    font-size: 25px;
+
+    animation:
+        sparkle
+        2.5s
+        ease-in-out
+        infinite;
+
+    z-index: 5;
+}
+
+
+.star.one {
+
+    left: 120px;
+
+    top: 90px;
+}
+
+
+.star.two {
+
+    right: 125px;
+
+    top: 120px;
+
+    animation-delay: .8s;
+}
+
+
+.star.three {
+
+    left: 180px;
+
+    bottom: 155px;
+
+    animation-delay: 1.2s;
+}
+
+
+/* =========================================
+   Animation
+========================================= */
+
+@keyframes bearFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px);
+    }
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.08);
+    }
+}
+
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+
+        opacity: .35;
+
+        transform:
+            scale(.8);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.3);
+    }
+}
+
+
+/* =========================================
+   หน้าจอเล็ก
+========================================= */
+
+@media (max-width: 700px) {
+
+    .card {
+
+        height: 680px;
+    }
+
+    .title {
+
+        font-size: 23px;
+    }
+
+    .bear {
+
+        transform:
+            scale(.78);
+    }
+
+    .bear-area {
+
+        top: 60px;
+    }
+
+    .message-box {
+
+        padding:
+            13px
+            15px
+            15px;
+    }
+
+    .message-box h1 {
+
+        font-size: 24px;
+    }
+
+    .message-box p {
+
+        font-size: 15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+    <!-- พื้นหลังตกแต่ง -->
+
+    <div class="circle one"></div>
+
+    <div class="circle two"></div>
+
+    <div class="circle three"></div>
+
+
+    <!-- ดอกไม้ตกแต่ง -->
+
+    <div class="flower one"></div>
+
+    <div class="flower two"></div>
+
+
+    <!-- ดาว -->
+
+    <div class="star one">✦</div>
+
+    <div class="star two">✦</div>
+
+    <div class="star three">✦</div>
+
+
+    <!-- =================================
+         หัวข้อ
+    ================================= -->
+
+    <div class="title">
+
+        ♡ จากหมีน้อยถึงNifa ♡
+
+    </div>
+
+
+    <!-- =================================
+         พื้นที่หมี
+    ================================= -->
+
+    <div class="bear-area">
+
+
+        <div class="bear">
+
+
+            <!-- หู -->
+
+            <div class="ear left"></div>
+
+            <div class="ear right"></div>
+
+
+            <!-- ตัว -->
+
+            <div class="body">
+
+                <div class="belly"></div>
+
+            </div>
+
+
+            <!-- แขน -->
+
+            <div class="arm left"></div>
+
+            <div class="arm right"></div>
+
+
+            <!-- หัว -->
+
+            <div class="head">
+
+
+                <!-- ตา -->
+
+                <div class="eye left"></div>
+
+                <div class="eye right"></div>
+
+
+                <!-- แก้ม -->
+
+                <div class="cheek left"></div>
+
+                <div class="cheek right"></div>
+
+
+                <!-- ปากกระบอก -->
+
+                <div class="muzzle">
+
+
+                    <!-- จมูก -->
+
+                    <div class="nose"></div>
+
+
+                    <!-- ปาก -->
+
+                    <div class="mouth"></div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- หัวใจที่ถือ -->
+
+            <div class="big-heart"></div>
+
+
+            <div class="heart-text">
+
+                ♥
+                <br>
+                เก่งมาก!
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         ข้อความหลังสอบ
+    ================================= -->
+
+    <div class="message-box">
+
+        <h1>
+            สอบเสร็จแล้วนะคุณ! 🧸
+        </h1>
+
+        <p>
+
+            เก่งมากเลยยที่ผ่านช่วงอ่านหนังสือและการสอบมาได้
+
+            <br>
+
+            ตอนนี้ให้ตุณวางเรื่องข้อสอบไว้ก่อนนะ
+            แล้วพักผ่อนให้เต็มที่เลย
+
+            <br>
+
+            ขอให้ผลออกมาดีอย่างที่คุณตั้งใจไว้นะครับ 🤎
+
+            <br>
+
+            <b>
+                เราจะเป็นกำลังใจให้คุณเสมอนะ ✨
+            </b>
+
+        </p>
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
